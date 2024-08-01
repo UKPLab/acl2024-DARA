@@ -4,7 +4,7 @@
 
 
 <p align="center">
-    🤗 <a href="https://huggingface.co/UKPLab/dara-mistral-7b" target="_blank">Models</a>  | 📃 <a href="https://arxiv.org/abs/2406.07080" target="_blank">Paper</a>
+    🤗 <a href="https://huggingface.co/UKPLab/dara-mistral-7b" target="_blank">Models</a> |  🤗 <a href="https://huggingface.co/datasets/UKPLab/dara" target="_blank">Dataset</a> | 📃 <a href="https://arxiv.org/abs/2406.07080" target="_blank">Paper</a>
 </p>
 
 This repository implements the DARA, a LLM-based agent for KGQA, as described in [DARA: Decomposition-Alignment-Reasoning Autonomous Language Agent for Question Answering over Knowledge Graphs](https://arxiv.org/abs/2406.07080) 
@@ -29,7 +29,7 @@ Don't hesitate to send us an e-mail or report an issue, if something is broken (
 - Freebase Setup
 To install Freebase, please refer to [here](https://github.com/shijx12/KQAPro_Baselines/tree/master/SPARQL)
 
-Once the service is up, replace the url in the line 6 of `./kg_querier/sparql_executor.py`
+Once the service is up, replace the url in the `line 6 of ./kg_querier/sparql_executor.py`
 ```python
 sparql = SPARQLWrapper("url/to/service")
 ```
@@ -37,12 +37,10 @@ sparql = SPARQLWrapper("url/to/service")
 |  Models            | Training Data | Model Card|
 |--------------------|---------------|-----------|
 |  DARA-Llama-2-7B   | [UKPLab/dara](https://huggingface.co/datasets/UKPLab/dara) |[UKPLab/dara-llama-2-7b](https://huggingface.co/UKPLab/dara-llama-2-7b)|
-|DARA-Llama-2-13B|[UKPLab/dara](https://huggingface.co/datasets/UKPLab/dara) |
-[UKPLab/dara-llama-2-13b](https://huggingface.co/UKPLab/dara-llama-2-13b)|
-|  DARA-Mistral-7B        |[UKPLab/dara](https://huggingface.co/datasets/UKPLab/dara)|
-[UKPLab/dara-mistral-7b](https://huggingface.co/UKPLab/dara-mistral-7b)|
+|DARA-Llama-2-13B|[UKPLab/dara](https://huggingface.co/datasets/UKPLab/dara) | [UKPLab/dara-llama-2-13b](https://huggingface.co/UKPLab/dara-llama-2-13b)|
+|  DARA-Mistral-7B        |[UKPLab/dara](https://huggingface.co/datasets/UKPLab/dara)| [UKPLab/dara-mistral-7b](https://huggingface.co/UKPLab/dara-mistral-7b)|
 |Agentbench-7B| [UKPLab/dara-agentbench](https://huggingface.co/datasets/UKPLab/DARA-Agentbench)|[UKPLab/agentbench-7b](https://huggingface.co/UKPLab/agentbench-7b)|
-|--------------------|---------------|-----------|
+
 
 ## Fine-tuning
 ```sh
