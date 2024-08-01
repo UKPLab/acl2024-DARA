@@ -1,0 +1,2870 @@
+[
+    {
+        "qid": "WebQTest-1",
+        "question": "what did james k polk do before he was president? The linked entity is james k polk (m.042f1)",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "James K Polk",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n  {\n    SELECT ?pFrom \n    WHERE {\n      ns:m.042f1 ns:government.politician.government_positions_held ?y . # James K. Polk\n      ?y ns:government.government_position_held.office_position_or_title ?x ; \n         ns:government.government_position_held.basic_title ns:m.060c4 ; # President\n         ns:government.government_position_held.from ?pFrom .\n    }\n  }\n  ns:m.042f1 ns:government.politician.government_positions_held ?y . # James K. Polk\n  ?y ns:government.government_position_held.office_position_or_title ?x ; \n     ns:government.government_position_held.from ?from .\n  \n  FILTER(xsd:dateTime(?pFrom) - xsd:dateTime(?from) > 0)\n}",
+        "topic_entity": "m.042f1",
+        "answer": [
+            {
+                "answer_argument": "m.02_bcst",
+                "answer_type": "Entity",
+                "entity_name": "United States Representative"
+            },
+            {
+                "answer_argument": "m.04x_n9q",
+                "answer_type": "Entity",
+                "entity_name": "Governor of Tennessee"
+            },
+            {
+                "answer_argument": "m.0cgqx",
+                "answer_type": "Entity",
+                "entity_name": "Speaker of the United States House of Representatives"
+            }
+        ],
+        "s_expression": "(JOIN (R government.government_position_held.office_position_or_title) (JOIN (R government.politician.government_positions_held) m.042f1))",
+        "s_expression_processed": "(JOIN (R government.government_position_held.office_position_or_title) (JOIN (R government.politician.government_positions_held) m.042f1))"
+    },
+    {
+        "qid": "WebQTest-32",
+        "question": "what is the australian dollar called? The linked entity is australian dollar (m.0kz1h).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.0kz1h",
+                    "class": "common.topic",
+                    "friendly_name": "australian dollar",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "finance.currency.currency_code"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.0kz1h)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.0kz1h ns:finance.currency.currency_code ?x .\n}\n",
+        "topic_entity": "m.0kz1h",
+        "answer": [
+            {
+                "answer_argument": "AUD",
+                "answer_type": "Value",
+                "entity_name": null
+            }
+        ],
+        "s_expression": "(JOIN (R finance.currency.currency_code) m.0kz1h)",
+        "s_expression_processed": "(JOIN (R finance.currency.currency_code) m.0kz1h)"
+    },
+    {
+        "qid": "WebQTest-38",
+        "question": "who did george w. bush run against for the second term? The linked entity is George W. Bush (m.09b6zr).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "George W. Bush",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n\tns:m.04qwhs ns:government.election.campaigns ?y .\n\t?y ns:government.election_campaign.candidate ?x .\nFILTER (?x != ns:m.09b6zr)\n}",
+        "topic_entity": "m.09b6zr",
+        "answer": [
+            {
+                "answer_argument": "m.033tf9",
+                "answer_type": "Entity",
+                "entity_name": "Michael Peroutka"
+            },
+            {
+                "answer_argument": "m.03vyyd",
+                "answer_type": "Entity",
+                "entity_name": "Gene Amondson"
+            },
+            {
+                "answer_argument": "m.06dnh",
+                "answer_type": "Entity",
+                "entity_name": "Ralph Nader"
+            },
+            {
+                "answer_argument": "m.0d3qd0",
+                "answer_type": "Entity",
+                "entity_name": "John Kerry"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-115",
+        "question": "what super bowl did peyton manning win? The linked entity is Peyton Manning (m.027jv8).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Peyton Manning",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?z\nWHERE {\n  ns:m.027jv8 ns:sports.pro_athlete.teams ?y .\n  ?y ns:sports.sports_team_roster.team ?x . #team\n  ?x ns:sports.sports_team.championships ?z . # super bowls\n  ?z ns:common.topic.notable_types ns:m.01xljv1 . #super bowl\n  ?z ns:sports.sports_championship_event.champion ?c .\n  ?z ns:time.event.start_date ?a .\n  \n  # Check the time overlap\n  FILTER(NOT EXISTS {?y ns:sports.sports_team_roster.from ?sk0} || \n             EXISTS {?y ns:sports.sports_team_roster.from ?sk1 . \n             FILTER(xsd:datetime(?sk1) - xsd:datetime(?a) <= 0) })\n\n  FILTER(NOT EXISTS {?y ns:sports.sports_team_roster.to ?sk2} || \n             EXISTS {?y ns:sports.sports_team_roster.to ?sk3 . \n             FILTER(xsd:datetime(?sk3) - xsd:datetime(?a) >= 0 ) }) \n}",
+        "topic_entity": "m.027jv8",
+        "answer": [
+            {
+                "answer_argument": "m.04k5qm",
+                "answer_type": "Entity",
+                "entity_name": "Super Bowl XLI"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-142",
+        "question": "who developed the tcp ip reference model? The linked entity is tcp (m.07hzk).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.07hzk",
+                    "class": "common.topic",
+                    "friendly_name": "tcp",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "base.argumentmaps.original_idea.innovator"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.07hzk)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.07hzk ns:base.argumentmaps.original_idea.innovator ?x .\n}\n",
+        "topic_entity": "m.07hzk",
+        "answer": [
+            {
+                "answer_argument": "m.01_z5v",
+                "answer_type": "Entity",
+                "entity_name": "Robert  E. Kahn"
+            },
+            {
+                "answer_argument": "m.07z23",
+                "answer_type": "Entity",
+                "entity_name": "Vint Cerf"
+            }
+        ],
+        "s_expression": "(JOIN (R base.argumentmaps.original_idea.innovator) m.07hzk)",
+        "s_expression_processed": "(JOIN (R base.argumentmaps.original_idea.innovator) m.07hzk)"
+    },
+    {
+        "qid": "WebQTest-178",
+        "question": "who was the leader of the us during wwii? The linked entity is wwii (m.081pw).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "wwii",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n  ns:m.081pw ns:time.event.start_date ?start ;\n             ns:time.event.end_date ?end .\n  ?x ns:government.politician.government_positions_held  ?y .\n  ?y ns:government.government_position_held.office_position_or_title ns:m.060d2 ; # President of the United States\n     ns:government.government_position_held.from  ?from ;\n     ns:government.government_position_held.to  ?to .\n  FILTER (?from < ?end)\n  FILTER (?to > ?start)\n}",
+        "topic_entity": "m.081pw",
+        "answer": [
+            {
+                "answer_argument": "m.02yy8",
+                "answer_type": "Entity",
+                "entity_name": "Franklin D. Roosevelt"
+            },
+            {
+                "answer_argument": "m.09bg4l",
+                "answer_type": "Entity",
+                "entity_name": "Harry S. Truman"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-239",
+        "question": "where do american bulldogs originate from? The linked entity is american bulldogs (m.02z_05).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.02z_05",
+                    "class": "common.topic",
+                    "friendly_name": "american bulldogs",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "biology.animal_breed.place_of_origin"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.02z_05)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.02z_05 ns:biology.animal_breed.place_of_origin ?x .\n}\n",
+        "topic_entity": "m.02z_05",
+        "answer": [
+            {
+                "answer_argument": "m.09c7w0",
+                "answer_type": "Entity",
+                "entity_name": "United States of America"
+            }
+        ],
+        "s_expression": "(JOIN (R biology.animal_breed.place_of_origin) m.02z_05)",
+        "s_expression_processed": "(JOIN (R biology.animal_breed.place_of_origin) m.02z_05)"
+    },
+    {
+        "qid": "WebQTest-352",
+        "question": "what did albert speer design? The linked entity is albert speer (m.0l4t).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.0l4t",
+                    "class": "common.topic",
+                    "friendly_name": "albert speer",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "architecture.architect.structures_designed"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.0l4t)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.0l4t ns:architecture.architect.structures_designed ?x .\n}\n",
+        "topic_entity": "m.0l4t",
+        "answer": [
+            {
+                "answer_argument": "m.03js7d",
+                "answer_type": "Entity",
+                "entity_name": "Olympiastadion"
+            },
+            {
+                "answer_argument": "m.04j99j",
+                "answer_type": "Entity",
+                "entity_name": "Reich Chancellery"
+            },
+            {
+                "answer_argument": "m.06cwrf",
+                "answer_type": "Entity",
+                "entity_name": "Deutsches Stadion"
+            },
+            {
+                "answer_argument": "m.06ft3z",
+                "answer_type": "Entity",
+                "entity_name": "Volkshalle"
+            }
+        ],
+        "s_expression": "(JOIN (R architecture.architect.structures_designed) m.0l4t)",
+        "s_expression_processed": "(JOIN (R architecture.architect.structures_designed) m.0l4t)"
+    },
+    {
+        "qid": "WebQTest-386",
+        "question": "how deep is lake merritt oakland? The linked entity is lake merritt (m.02_sf_).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.02_sf_",
+                    "class": "common.topic",
+                    "friendly_name": "lake merritt",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "geography.body_of_water.depth"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.02_sf_)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.02_sf_ ns:geography.body_of_water.depth ?x .\n}\n",
+        "topic_entity": "m.02_sf_",
+        "answer": [
+            {
+                "answer_argument": "3.048",
+                "answer_type": "Value",
+                "entity_name": null
+            }
+        ],
+        "s_expression": "(JOIN (R geography.body_of_water.depth) m.02_sf_)",
+        "s_expression_processed": "(JOIN (R geography.body_of_water.depth) m.02_sf_)"
+    },
+    {
+        "qid": "WebQTest-390",
+        "question": "when was the last time the toronto maple leafs were in the stanley cup finals? The linked entity is Maple Leafs (m.0j6tr).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Maple Leafs",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n  ?x ns:sports.sports_championship_event.championship ns:m.0hn79\n  {\n    ?x ns:sports.sports_championship_event.champion ns:m.0j6tr . # Toronto Maple Leafs\n  }\n  UNION\n  {\n    ?x ns:sports.sports_championship_event.runner_up ns:m.0j6tr . # Toronto Maple Leafs\n  }\n  ?x ns:time.event.start_date ?st .\n}\nORDER BY DESC(xsd:datetime(?st))\nLIMIT 1",
+        "topic_entity": "m.0j6tr",
+        "answer": [
+            {
+                "answer_argument": "m.03by199",
+                "answer_type": "Entity",
+                "entity_name": "1967 Stanley Cup Finals"
+            }
+        ],
+        "s_expression": "(ARGMAX (JOIN (R sports.sports_team.championships) m.0j6tr) time.event.start_date)",
+        "s_expression_processed": "(ARGMAX (JOIN (R sports.sports_team.championships) m.0j6tr) time.event.start_date)"
+    },
+    {
+        "qid": "WebQTest-397",
+        "question": "what are the school colors for harvard university? The linked entity is harvard university (m.03ksy).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.03ksy",
+                    "class": "common.topic",
+                    "friendly_name": "harvard university",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "education.educational_institution.colors"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.03ksy)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.03ksy ns:education.educational_institution.colors ?x .\n}\n",
+        "topic_entity": "m.03ksy",
+        "answer": [
+            {
+                "answer_argument": "m.01jnf1",
+                "answer_type": "Entity",
+                "entity_name": "Crimson"
+            }
+        ],
+        "s_expression": "(JOIN (R education.educational_institution.colors) m.03ksy)",
+        "s_expression_processed": "(JOIN (R education.educational_institution.colors) m.03ksy)"
+    },
+    {
+        "qid": "WebQTest-482",
+        "question": "who plays blaine in batman? The linked entity is Batman (m.01hp5).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Batman",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n\t{ \n\tns:m.0321b4 ns:film.film_character.portrayed_in_films ?y .\n\t?y ns:film.performance.actor ?x .\n\t}\n\tUNION\n\t{\n\tns:m.0321b4 ns:tv.tv_character.appeared_in_tv_program ?y .\n\t?y ns:tv.regular_tv_appearance.actor ?x .\n\t}\n}",
+        "topic_entity": "m.01hp5",
+        "answer": [
+            {
+                "answer_argument": "m.0115x7ps",
+                "answer_type": "Entity",
+                "entity_name": "Matthew Wagner"
+            },
+            {
+                "answer_argument": "m.01xllf",
+                "answer_type": "Entity",
+                "entity_name": "Danny Trejo"
+            },
+            {
+                "answer_argument": "m.02hblj",
+                "answer_type": "Entity",
+                "entity_name": "Carlos Alazraqui"
+            },
+            {
+                "answer_argument": "m.05xf75",
+                "answer_type": "Entity",
+                "entity_name": "Tom Hardy"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-502",
+        "question": "where did al qaeda attack? The linked entity is al qaeda (m.0v74).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 2,
+                    "node_type": "entity",
+                    "id": "m.0v74",
+                    "class": "common.topic",
+                    "friendly_name": "al qaeda",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                },
+                {
+                    "nid": 1,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "Common topic",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none"
+                }
+            ],
+            "edges": [
+                {
+                    "start": 2,
+                    "end": 1,
+                    "relation": "base.disaster2.attacker.attack_s"
+                },
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "base.disaster2.attack_process.attack_event"
+                },
+                {
+                    "start": 1,
+                    "end": 2,
+                    "relation": "base.disaster2.attack_process.attacker"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 3,
+        "num_edge": 3,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.0v74)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.0v74 ns:base.disaster2.attacker.attack_s ?y .\n?y ns:base.disaster2.attack_process.attack_event ?x .\n?y ns:base.disaster2.attack_process.attacker ns:m.0v74 .\n}\n",
+        "topic_entity": "m.0v74",
+        "answer": [
+            {
+                "answer_argument": "m.0c6cwg",
+                "answer_type": "Entity",
+                "entity_name": "Taliban insurgency"
+            },
+            {
+                "answer_argument": "m.0d0vp3",
+                "answer_type": "Entity",
+                "entity_name": "September 11 attacks"
+            }
+        ],
+        "s_expression": "(JOIN (R base.disaster2.attack_process.attack_event) (AND (JOIN (R base.disaster2.attacker.attack_s) m.0v74) (JOIN base.disaster2.attack_process.attacker m.0v74)))",
+        "s_expression_processed": "(JOIN (R base.disaster2.attack_process.attack_event) (AND (JOIN (R base.disaster2.attacker.attack_s) m.0v74) (JOIN base.disaster2.attack_process.attacker m.0v74)))"
+    },
+    {
+        "qid": "WebQTest-535",
+        "question": "what is the second biggest state in the united states? The linked entity is United States of America (m.09c7w0).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "United States of America",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n                ns:m.09c7w0 ns:base.aareas.schema.administrative_area.administrative_children ?x .\n                ?x ns:common.topic.notable_types ns:m.0kpys4 .  # US State\n                ?x ns:location.location.area ?y .\n}\nORDER BY DESC(xsd:float(?y))\nLIMIT 1\nOFFSET 1",
+        "topic_entity": "m.09c7w0",
+        "answer": [
+            {
+                "answer_argument": "m.07b_l",
+                "answer_type": "Entity",
+                "entity_name": "Texas"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-555",
+        "question": "what did drew barrymore go to rehab for? The linked entity is drew barrymore (m.026c1).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 2,
+                    "node_type": "entity",
+                    "id": "m.026c1",
+                    "class": "common.topic",
+                    "friendly_name": "drew barrymore",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                },
+                {
+                    "nid": 1,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "Common topic",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none"
+                }
+            ],
+            "edges": [
+                {
+                    "start": 2,
+                    "end": 1,
+                    "relation": "celebrities.celebrity.substance_abuse_problems"
+                },
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "celebrities.substance_abuse_problem.substance"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 3,
+        "num_edge": 2,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.026c1)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.026c1 ns:celebrities.celebrity.substance_abuse_problems ?y .\n?y ns:celebrities.substance_abuse_problem.substance ?x .\n}\n",
+        "topic_entity": "m.026c1",
+        "answer": [
+            {
+                "answer_argument": "m.012mj",
+                "answer_type": "Entity",
+                "entity_name": "Alcoholic beverage"
+            },
+            {
+                "answer_argument": "m.0256b",
+                "answer_type": "Entity",
+                "entity_name": "Cocaine"
+            }
+        ],
+        "s_expression": "(JOIN (R celebrities.substance_abuse_problem.substance) (JOIN (R celebrities.celebrity.substance_abuse_problems) m.026c1))",
+        "s_expression_processed": "(JOIN (R celebrities.substance_abuse_problem.substance) (JOIN (R celebrities.celebrity.substance_abuse_problems) m.026c1))"
+    },
+    {
+        "qid": "WebQTest-618",
+        "question": "where is chesapeake bay bridge? The linked entity is chesapeake bay bridge (m.03xksb).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.03xksb",
+                    "class": "common.topic",
+                    "friendly_name": "chesapeake bay bridge",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "transportation.bridge.locale"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.03xksb)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.03xksb ns:transportation.bridge.locale ?x .\n}\n",
+        "topic_entity": "m.03xksb",
+        "answer": [
+            {
+                "answer_argument": "m.0dn8b",
+                "answer_type": "Entity",
+                "entity_name": "Anne Arundel County"
+            },
+            {
+                "answer_argument": "m.0g834",
+                "answer_type": "Entity",
+                "entity_name": "Queen Anne's County"
+            }
+        ],
+        "s_expression": "(JOIN (R transportation.bridge.locale) m.03xksb)",
+        "s_expression_processed": "(JOIN (R transportation.bridge.locale) m.03xksb)"
+    },
+    {
+        "qid": "WebQTest-622",
+        "question": "where did the taliban began? The linked entity is taliban (m.07jqh).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.07jqh",
+                    "class": "common.topic",
+                    "friendly_name": "taliban",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "organization.organization.geographic_scope"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.07jqh)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.07jqh ns:organization.organization.geographic_scope ?x .\n}\n",
+        "topic_entity": "m.07jqh",
+        "answer": [
+            {
+                "answer_argument": "m.0jdd",
+                "answer_type": "Entity",
+                "entity_name": "Afghanistan"
+            }
+        ],
+        "s_expression": "(JOIN (R organization.organization.geographic_scope) m.07jqh)",
+        "s_expression_processed": "(JOIN (R organization.organization.geographic_scope) m.07jqh)"
+    },
+    {
+        "qid": "WebQTest-661",
+        "question": "who did nasri play for before arsenal? The linked entity is Samir Nasri (m.0f2dbm).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Samir Nasri",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nfilter(?x != ns:m.0xbm)\nns:m.0f2dbm ns:sports.pro_athlete.teams ?z . #Samir Nasri\n?z ns:sports.sports_team_roster.team ns:m.0xbm  . #arsenal\n?z ns:sports.sports_team_roster.from ?from .\nns:m.0f2dbm ns:sports.pro_athlete.teams ?y . #Samir Nasri\n?y ns:sports.sports_team_roster.team ?x .\n?y  ns:sports.sports_team_roster.to ?to .\nFILTER (xsd:dateTime(?from) - xsd:dateTime(?to) >= 0)\n}\nORDER BY Desc(xsd:datetime(?from))\nLIMIT 1",
+        "topic_entity": "m.0f2dbm",
+        "answer": [
+            {
+                "answer_argument": "m.02gys2",
+                "answer_type": "Entity",
+                "entity_name": "Olympique de Marseille"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-711",
+        "question": "who plays chuck bass in gossip girl? The linked entity is chuck bass (m.0g0jx7).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.0g0jx7",
+                    "class": "common.topic",
+                    "friendly_name": "chuck bass",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "base.gossipgirl.character.played_by"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.0g0jx7)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.0g0jx7 ns:base.gossipgirl.character.played_by ?x .\n}\n",
+        "topic_entity": "m.0g0jx7",
+        "answer": [
+            {
+                "answer_argument": "m.02w4x29",
+                "answer_type": "Entity",
+                "entity_name": "Ed Westwick"
+            }
+        ],
+        "s_expression": "(JOIN (R base.gossipgirl.character.played_by) m.0g0jx7)",
+        "s_expression_processed": "(JOIN (R base.gossipgirl.character.played_by) m.0g0jx7)"
+    },
+    {
+        "qid": "WebQTest-722",
+        "question": "what is the name of the book hitler wrote in jail? The linked entity is Hitler (m.07_m9_).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Hitler",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT  ?x\nWHERE {\n  ns:m.07_m9_ ns:book.book_subject.works ?x .\n  ?x ns:book.written_work.date_written ?d .\n\n  ns:m.07_m9_ ns:base.prison.prisoner.imprisoned ?y .\n  ?y          ns:base.prison.imprisonment.from ?from ;\n              ns:base.prison.imprisonment.to ?to .\n  FILTER (xsd:dateTime(?d) - xsd:dateTime(?from) >= 0)\n  FILTER (xsd:dateTime(?to) - xsd:dateTime(?d) >= 0)\n}",
+        "topic_entity": "m.07_m9_",
+        "answer": [],
+        "s_expression": "(JOIN (R book.book_subject.works) m.07_m9_)",
+        "s_expression_processed": "(JOIN (R book.book_subject.works) m.07_m9_)"
+    },
+    {
+        "qid": "WebQTest-753",
+        "question": "what position did stanley matthews play? The linked entity is stanley matthews (m.013s6x).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.013s6x",
+                    "class": "common.topic",
+                    "friendly_name": "stanley matthews",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "soccer.football_player.position_s"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.013s6x)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.013s6x ns:soccer.football_player.position_s ?x .\n}\n",
+        "topic_entity": "m.013s6x",
+        "answer": [
+            {
+                "answer_argument": "m.02nzb8",
+                "answer_type": "Entity",
+                "entity_name": "Midfielder"
+            },
+            {
+                "answer_argument": "m.02sdk9v",
+                "answer_type": "Entity",
+                "entity_name": "Forward"
+            },
+            {
+                "answer_argument": "m.03qh1vd",
+                "answer_type": "Entity",
+                "entity_name": "Outside forward"
+            }
+        ],
+        "s_expression": "(JOIN (R soccer.football_player.position_s) m.013s6x)",
+        "s_expression_processed": "(JOIN (R soccer.football_player.position_s) m.013s6x)"
+    },
+    {
+        "qid": "WebQTest-780",
+        "question": "what is the new movie john carter about? The linked entity is movie john carter (m.03whyr).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.03whyr",
+                    "class": "common.topic",
+                    "friendly_name": "movie john carter",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "film.film.genre"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.03whyr)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.03whyr ns:film.film.genre ?x .\n}\n",
+        "topic_entity": "m.03whyr",
+        "answer": [
+            {
+                "answer_argument": "m.01hmnh",
+                "answer_type": "Entity",
+                "entity_name": "Fantasy"
+            },
+            {
+                "answer_argument": "m.02kdv5l",
+                "answer_type": "Entity",
+                "entity_name": "Action Film"
+            },
+            {
+                "answer_argument": "m.03k9fj",
+                "answer_type": "Entity",
+                "entity_name": "Adventure Film"
+            },
+            {
+                "answer_argument": "m.06n90",
+                "answer_type": "Entity",
+                "entity_name": "Science Fiction"
+            }
+        ],
+        "s_expression": "(JOIN (R film.film.genre) m.03whyr)",
+        "s_expression_processed": "(JOIN (R film.film.genre) m.03whyr)"
+    },
+    {
+        "qid": "WebQTest-813",
+        "question": "who was john f kennedy 's family? The linked entity is John F. Kennedy (m.0d3k14).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "John F. Kennedy",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n\tFILTER (?x != ns:m.0d3k14)\n\t{ \n\t  # Parents\n\t  ns:m.0d3k14 ns:people.person.parents ?x .\n\t}\n\tUNION\n\t{\n\t  # Children\n\t  ns:m.0d3k14 ns:people.person.children ?x .\n\t}\n\tUNION\n\t{\n\t  # Siblings\n\t  ns:m.0d3k14 ns:people.person.sibling_s ?y .\n\t  ?y ns:people.sibling_relationship.sibling ?x .\n\t}\n\tUNION\n\t{\n\t  # Spouse\n\t  ns:m.0d3k14 ns:people.person.spouse_s ?y .\n\t  ?y ns:people.marriage.spouse ?x .\n\t  ?y ns:people.marriage.type_of_union ns:m.04ztj .\n\t  FILTER (NOT EXISTS {?y ns:people.marriage.to []})\n\t}\n}",
+        "topic_entity": "m.0d3k14",
+        "answer": [
+            {
+                "answer_argument": "m.0150p7",
+                "answer_type": "Entity",
+                "entity_name": "John F. Kennedy Jr."
+            },
+            {
+                "answer_argument": "m.0194xc",
+                "answer_type": "Entity",
+                "entity_name": "Ted Kennedy"
+            },
+            {
+                "answer_argument": "m.01kyns",
+                "answer_type": "Entity",
+                "entity_name": "Rosemary Kennedy"
+            },
+            {
+                "answer_argument": "m.01qlg1",
+                "answer_type": "Entity",
+                "entity_name": "Joseph P. Kennedy, Sr."
+            },
+            {
+                "answer_argument": "m.01x4d5",
+                "answer_type": "Entity",
+                "entity_name": "Rose Kennedy"
+            },
+            {
+                "answer_argument": "m.01y603",
+                "answer_type": "Entity",
+                "entity_name": "Caroline Kennedy"
+            },
+            {
+                "answer_argument": "m.020t1x",
+                "answer_type": "Entity",
+                "entity_name": "Joseph P. Kennedy, Jr."
+            },
+            {
+                "answer_argument": "m.028qh_",
+                "answer_type": "Entity",
+                "entity_name": "Jean Kennedy Smith"
+            },
+            {
+                "answer_argument": "m.02shr7",
+                "answer_type": "Entity",
+                "entity_name": "Patrick Bouvier Kennedy"
+            },
+            {
+                "answer_argument": "m.04f1nm",
+                "answer_type": "Entity",
+                "entity_name": "Kathleen Cavendish"
+            },
+            {
+                "answer_argument": "m.04f1qs",
+                "answer_type": "Entity",
+                "entity_name": "Patricia Kennedy Lawford"
+            },
+            {
+                "answer_argument": "m.06hx2",
+                "answer_type": "Entity",
+                "entity_name": "Robert F. Kennedy"
+            },
+            {
+                "answer_argument": "m.0bt9c",
+                "answer_type": "Entity",
+                "entity_name": "Eunice Kennedy Shriver"
+            },
+            {
+                "answer_argument": "m.0j3218k",
+                "answer_type": "Entity",
+                "entity_name": "Arabella Kennedy"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-820",
+        "question": "what are the names of harry potter movies in order? The linked entity is harry potter movies (m.02676m4).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.02676m4",
+                    "class": "common.topic",
+                    "friendly_name": "harry potter movies",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "film.film_series.films_in_series"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.02676m4)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.02676m4 ns:film.film_series.films_in_series ?x .\n}\n",
+        "topic_entity": "m.02676m4",
+        "answer": [
+            {
+                "answer_argument": "m.02pth35",
+                "answer_type": "Entity",
+                "entity_name": "Harry Potter and the Deathly Hallows - Part I"
+            },
+            {
+                "answer_argument": "m.03176f",
+                "answer_type": "Entity",
+                "entity_name": "Harry Potter and the Philosopher's Stone"
+            },
+            {
+                "answer_argument": "m.031778",
+                "answer_type": "Entity",
+                "entity_name": "Harry Potter and the Chamber of Secrets"
+            },
+            {
+                "answer_argument": "m.03177r",
+                "answer_type": "Entity",
+                "entity_name": "Harry Potter and the Prisoner of Azkaban"
+            },
+            {
+                "answer_argument": "m.031786",
+                "answer_type": "Entity",
+                "entity_name": "Harry Potter and the Goblet of Fire"
+            },
+            {
+                "answer_argument": "m.031hcx",
+                "answer_type": "Entity",
+                "entity_name": "Harry Potter and the Order of the Phoenix"
+            },
+            {
+                "answer_argument": "m.03hxsv",
+                "answer_type": "Entity",
+                "entity_name": "Harry Potter and the Half-Blood Prince"
+            },
+            {
+                "answer_argument": "m.0gvsynb",
+                "answer_type": "Entity",
+                "entity_name": "Harry Potter and the Deathly Hallows – Part 2"
+            }
+        ],
+        "s_expression": "(JOIN (R film.film_series.films_in_series) m.02676m4)",
+        "s_expression_processed": "(JOIN (R film.film_series.films_in_series) m.02676m4)"
+    },
+    {
+        "qid": "WebQTest-847",
+        "question": "what countries are members of the security council? The linked entity is security council (m.07vnr).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 2,
+                    "node_type": "entity",
+                    "id": "m.07vnr",
+                    "class": "common.topic",
+                    "friendly_name": "security council",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                },
+                {
+                    "nid": 1,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "Common topic",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": [
+                        "NOW",
+                        "base.unitednations.united_nations_body_membership.from"
+                    ]
+                }
+            ],
+            "edges": [
+                {
+                    "start": 2,
+                    "end": 1,
+                    "relation": "base.unitednations.united_nations_body.members"
+                },
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "base.unitednations.united_nations_body_membership.member"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 3,
+        "num_edge": 2,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.07vnr)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.07vnr ns:base.unitednations.united_nations_body.members ?y .\n?y ns:base.unitednations.united_nations_body_membership.member ?x .\nFILTER(NOT EXISTS {?y ns:base.unitednations.united_nations_body_membership.from ?sk0} || \nEXISTS {?y ns:base.unitednations.united_nations_body_membership.from ?sk1 . \nFILTER(xsd:datetime(?sk1) <= \"2015-08-10\"^^xsd:dateTime) })\nFILTER(NOT EXISTS {?y ns:base.unitednations.united_nations_body_membership.to ?sk2} || \nEXISTS {?y ns:base.unitednations.united_nations_body_membership.to ?sk3 . \nFILTER(xsd:datetime(?sk3) >= \"2015-08-10\"^^xsd:dateTime) })\n}\n",
+        "topic_entity": "m.07vnr",
+        "answer": [
+            {
+                "answer_argument": "m.01699",
+                "answer_type": "Entity",
+                "entity_name": "Burkina Faso"
+            },
+            {
+                "answer_argument": "m.01crd5",
+                "answer_type": "Entity",
+                "entity_name": "Vietnam"
+            },
+            {
+                "answer_argument": "m.01p8s",
+                "answer_type": "Entity",
+                "entity_name": "Costa Rica"
+            },
+            {
+                "answer_argument": "m.01pj7",
+                "answer_type": "Entity",
+                "entity_name": "Croatia"
+            },
+            {
+                "answer_argument": "m.06bnz",
+                "answer_type": "Entity",
+                "entity_name": "Russia"
+            },
+            {
+                "answer_argument": "m.07ssc",
+                "answer_type": "Entity",
+                "entity_name": "United Kingdom"
+            },
+            {
+                "answer_argument": "m.09c7w0",
+                "answer_type": "Entity",
+                "entity_name": "United States of America"
+            },
+            {
+                "answer_argument": "m.0d05w3",
+                "answer_type": "Entity",
+                "entity_name": "China"
+            },
+            {
+                "answer_argument": "m.0f8l9c",
+                "answer_type": "Entity",
+                "entity_name": "France"
+            }
+        ],
+        "s_expression": "(JOIN (R base.unitednations.united_nations_body_membership.member) (TC (JOIN (R base.unitednations.united_nations_body.members) m.07vnr) base.unitednations.united_nations_body_membership.from NOW))",
+        "s_expression_processed": "(JOIN (R base.unitednations.united_nations_body_membership.member) (TC (JOIN (R base.unitednations.united_nations_body.members) m.07vnr) base.unitednations.united_nations_body_membership.from NOW))"
+    },
+    {
+        "qid": "WebQTest-905",
+        "question": "what years did joe montana win super bowl? The linked entity is Joe Montana (m.01r6hc).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Joe Montana",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?a\nWHERE {\n    ns:m.01r6hc ns:sports.pro_athlete.teams ?y .\n    ?y ns:sports.sports_team_roster.team ?x . #team\n    ?x ns:sports.sports_team.championships ?z . # super bowls\n    ?z ns:common.topic.notable_types ns:m.01xljv1 . #super bowl\n    ?z ns:sports.sports_championship_event.champion ?c .\n    ?z ns:time.event.start_date ?a .\n\n  # Check the time overlap\n  FILTER(NOT EXISTS {?y ns:sports.sports_team_roster.from ?sk0} || \n             EXISTS {?y ns:sports.sports_team_roster.from ?sk1 . \n             FILTER(xsd:datetime(?sk1) - xsd:datetime(?a) <= 0) })\n\n  FILTER(NOT EXISTS {?y ns:sports.sports_team_roster.to ?sk2} || \n             EXISTS {?y ns:sports.sports_team_roster.to ?sk3 . \n             FILTER(xsd:datetime(?sk3) - xsd:datetime(?a) >= 0 ) }) \n}",
+        "topic_entity": "m.01r6hc",
+        "answer": [
+            {
+                "answer_argument": "1982-01-24",
+                "answer_type": "Value",
+                "entity_name": null
+            },
+            {
+                "answer_argument": "1985-01-20",
+                "answer_type": "Value",
+                "entity_name": null
+            },
+            {
+                "answer_argument": "1989-01-22",
+                "answer_type": "Value",
+                "entity_name": null
+            },
+            {
+                "answer_argument": "1990-01-28",
+                "answer_type": "Value",
+                "entity_name": null
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-931",
+        "question": "what jobs did john adams have before he was president? The linked entity is John Adams (m.03_js).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "John Adams",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nns:m.03_js ns:government.politician.government_positions_held ?p .\n?p ns:government.government_position_held.office_position_or_title ns:m.060d2 .\n?p ns:government.government_position_held.from ?from .\nns:m.03_js ns:government.politician.government_positions_held ?y .\n?y ns:government.government_position_held.office_position_or_title ?x .\n?y ns:government.government_position_held.from ?z .\nfilter(xsd:datetime(?z) - xsd:datetime(?from) < 0)\n }",
+        "topic_entity": "m.03_js",
+        "answer": [
+            {
+                "answer_argument": "m.02q_kt_",
+                "answer_type": "Entity",
+                "entity_name": "United States Ambassador to the Netherlands"
+            },
+            {
+                "answer_argument": "m.03hrvl",
+                "answer_type": "Entity",
+                "entity_name": "United States Ambassador to the United Kingdom"
+            },
+            {
+                "answer_argument": "m.080v2",
+                "answer_type": "Entity",
+                "entity_name": "Vice President of the United States"
+            },
+            {
+                "answer_argument": "m.09ryhrh",
+                "answer_type": "Entity",
+                "entity_name": "Delegate to the Continental Congress"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-1118",
+        "question": "when did mark mcgwire retired? The linked entity is mark mcgwire (m.0550x).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 2,
+                    "node_type": "entity",
+                    "id": "m.0550x",
+                    "class": "common.topic",
+                    "friendly_name": "mark mcgwire",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                },
+                {
+                    "nid": 1,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "Common topic",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none"
+                }
+            ],
+            "edges": [
+                {
+                    "start": 2,
+                    "end": 1,
+                    "relation": "baseball.baseball_player.lifetime_batting_statistics"
+                },
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "baseball.lifetime_batting_statistics.ending_season"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 3,
+        "num_edge": 2,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.0550x)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.0550x ns:baseball.baseball_player.lifetime_batting_statistics ?y .\n?y ns:baseball.lifetime_batting_statistics.ending_season ?x .\n}\n",
+        "topic_entity": "m.0550x",
+        "answer": [
+            {
+                "answer_argument": "m.02h7sdf",
+                "answer_type": "Entity",
+                "entity_name": "2001 Major League Baseball Season"
+            }
+        ],
+        "s_expression": "(JOIN (R baseball.lifetime_batting_statistics.ending_season) (JOIN (R baseball.baseball_player.lifetime_batting_statistics) m.0550x))",
+        "s_expression_processed": "(JOIN (R baseball.lifetime_batting_statistics.ending_season) (JOIN (R baseball.baseball_player.lifetime_batting_statistics) m.0550x))"
+    },
+    {
+        "qid": "WebQTest-1127",
+        "question": "which country in north america is divided into provinces? The linked entity is north america (m.059g4).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "North America",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x \nWHERE {\n    ns:m.059g4 ns:location.location.contains ?x .  # North America\n    ?x ns:common.topic.notable_types ns:m.01mp . # Country\n    ?x ns:location.location.contains ?y .\n    ?y ns:common.topic.notable_types ?t . \n# All the possible \"province\" type\nFILTER ((?t = ns:m.01nm) ||\n(?t = ns:m.02_1y_9) ||\n(?t = ns:m.02_3ny_) ||\n(?t = ns:m.02_3phk) ||\n(?t = ns:m.02_3r2r) ||\n(?t = ns:m.02_3rt3) ||\n(?t = ns:m.02_3zf4) ||\n(?t = ns:m.02_40h1) ||\n(?t = ns:m.02_96lm) ||\n(?t = ns:m.02yxk5c) ||\n(?t = ns:m.02zd6yn) ||\n(?t = ns:m.03z96kq) ||\n(?t = ns:m.04g7rg9) ||\n(?t = ns:m.04js0h5) ||\n(?t = ns:m.065rjpr) ||\n(?t = ns:m.078_8dm) ||\n(?t = ns:m.0hzcb3l) ||\n(?t = ns:m.0hzcb5p) ||\n(?t = ns:m.0hzcb69) ||\n(?t = ns:m.0hzcb7p) ||\n(?t = ns:m.0hzcd76) ||\n(?t = ns:m.0hzcd7v) ||\n(?t = ns:m.0hzcdb0) ||\n(?t = ns:m.0hzcdd6) ||\n(?t = ns:m.0hzcdlq) ||\n(?t = ns:m.0hzcdmg) ||\n(?t = ns:m.0hzcdrj) ||\n(?t = ns:m.0hzcdzg) ||\n(?t = ns:m.0hzcdzv) ||\n(?t = ns:m.0hzcf4d) ||\n(?t = ns:m.0hzcf50) ||\n(?t = ns:m.0hzcfdx) ||\n(?t = ns:m.0hzcffv) ||\n(?t = ns:m.0hzcfgg) ||\n(?t = ns:m.0hzcfj0) ||\n(?t = ns:m.0hzcfm2) ||\n(?t = ns:m.0hzcfpz) ||\n(?t = ns:m.0hzcfsv) ||\n(?t = ns:m.0hzcfyb) ||\n(?t = ns:m.0hzcg20) ||\n(?t = ns:m.0hzcg90) ||\n(?t = ns:m.0hzcgdz) ||\n(?t = ns:m.0hzcgfl) ||\n(?t = ns:m.0hzcggv) ||\n(?t = ns:m.0hzcgj2) ||\n(?t = ns:m.0hzcgk4) ||\n(?t = ns:m.0hzcgny) ||\n(?t = ns:m.0hzcgqt) ||\n(?t = ns:m.0hzcgsp) ||\n(?t = ns:m.0hzcgvh) ||\n(?t = ns:m.0hzcgvw) ||\n(?t = ns:m.0hzcgxf) ||\n(?t = ns:m.0hzcjv6) ||\n(?t = ns:m.0hzcjvv) ||\n(?t = ns:m.0hzcjxq) ||\n(?t = ns:m.0hzck_1) ||\n(?t = ns:m.0hzck1r) ||\n(?t = ns:m.0hzck47) ||\n(?t = ns:m.0hzck7p) ||\n(?t = ns:m.0hzckbh) ||\n(?t = ns:m.0hzckgc) ||\n(?t = ns:m.0hzcklh) ||\n(?t = ns:m.0hzckv_) ||\n(?t = ns:m.0hzckvp) ||\n(?t = ns:m.0hzckwy) ||\n(?t = ns:m.0hzcl1k) ||\n(?t = ns:m.0hzcl2t) ||\n(?t = ns:m.0hzfxh6) ||\n(?t = ns:m.0hzfxjh) ||\n(?t = ns:m.0hzfxny) ||\n(?t = ns:m.0hzfxv1) ||\n(?t = ns:m.0hzfxx7) ||\n(?t = ns:m.0hzfxzs) ||\n(?t = ns:m.0hzfy0d) ||\n(?t = ns:m.0hz_gjz) ||\n(?t = ns:m.0hzjldq) ||\n(?t = ns:m.0hzjm9b) ||\n(?t = ns:m.0hzjmf9) ||\n(?t = ns:m.0hzjmjf) ||\n(?t = ns:m.0hzjmlj) ||\n(?t = ns:m.0hzjmm6) ||\n(?t = ns:m.0hzjmmx) ||\n(?t = ns:m.0j1zd59) ||\n(?t = ns:m.0j1zd5w) )\n}",
+        "topic_entity": "m.059g4",
+        "answer": [
+            {
+                "answer_argument": "m.0d060g",
+                "answer_type": "Entity",
+                "entity_name": "Canada"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-1130",
+        "question": "what is real name of santa claus? The linked entity is santa claus (m.027g6wt).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.027g6wt",
+                    "class": "common.topic",
+                    "friendly_name": "santa claus",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "fictional_universe.fictional_character.based_on"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.027g6wt)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.027g6wt ns:fictional_universe.fictional_character.based_on ?x .\n}\n",
+        "topic_entity": "m.027g6wt",
+        "answer": [
+            {
+                "answer_argument": "m.0f9q7",
+                "answer_type": "Entity",
+                "entity_name": "Saint Nicholas"
+            }
+        ],
+        "s_expression": "(JOIN (R fictional_universe.fictional_character.based_on) m.027g6wt)",
+        "s_expression_processed": "(JOIN (R fictional_universe.fictional_character.based_on) m.027g6wt)"
+    },
+    {
+        "qid": "WebQTest-1133",
+        "question": "what does wh smith stand for? The linked entity is wh smith.",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "William Henry Smith",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n  ?x ns:common.topic.alias \"W H Smith\"@en .\n}",
+        "topic_entity": "m.04sxlr",
+        "answer": [
+            {
+                "answer_argument": "m.013_kt",
+                "answer_type": "Entity",
+                "entity_name": "WHSmith"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-1144",
+        "question": "what are the major trading partners of germany? The linked entity is germany (m.0345h).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Germany",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x \nWHERE {\n\tFILTER (?x != ns:m.0345h)\n\t{ \n\t  ns:m.0345h ns:location.statistical_region.places_exported_to ?y .\n\t  ?y ns:location.imports_and_exports.exported_to ?x . \n\t}\n\tUNION\n\t{\n\t  ns:m.0345h ns:location.statistical_region.places_imported_from ?y .\n\t  ?y ns:location.imports_and_exports.imported_from ?x . \n\t}\n}",
+        "topic_entity": "m.0345h",
+        "answer": [
+            {
+                "answer_argument": "m.016zwt",
+                "answer_type": "Entity",
+                "entity_name": "Nepal"
+            },
+            {
+                "answer_argument": "m.04sj3",
+                "answer_type": "Entity",
+                "entity_name": "Madagascar"
+            },
+            {
+                "answer_argument": "m.06q1r",
+                "answer_type": "Entity",
+                "entity_name": "Scotland"
+            },
+            {
+                "answer_argument": "m.07dzf",
+                "answer_type": "Entity",
+                "entity_name": "Tanzania"
+            },
+            {
+                "answer_argument": "m.07fsv",
+                "answer_type": "Entity",
+                "entity_name": "Tuvalu"
+            },
+            {
+                "answer_argument": "m.09c7w0",
+                "answer_type": "Entity",
+                "entity_name": "United States of America"
+            },
+            {
+                "answer_argument": "m.0h3y",
+                "answer_type": "Entity",
+                "entity_name": "Algeria"
+            },
+            {
+                "answer_argument": "m.0jdd",
+                "answer_type": "Entity",
+                "entity_name": "Afghanistan"
+            },
+            {
+                "answer_argument": "m.0jdx",
+                "answer_type": "Entity",
+                "entity_name": "Albania"
+            },
+            {
+                "answer_argument": "m.0l3h",
+                "answer_type": "Entity",
+                "entity_name": "Antigua and Barbuda"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-1180",
+        "question": "what sarah dessen books are movies? The linked entity is sarah dessen (m.052s_8).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.052s_8",
+                    "class": "common.topic",
+                    "friendly_name": "sarah dessen",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "film.film_story_contributor.film_story_credits"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.052s_8)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.052s_8 ns:film.film_story_contributor.film_story_credits ?x .\n}\n",
+        "topic_entity": "m.052s_8",
+        "answer": [
+            {
+                "answer_argument": "m.04y364",
+                "answer_type": "Entity",
+                "entity_name": "How to Deal"
+            }
+        ],
+        "s_expression": "(JOIN (R film.film_story_contributor.film_story_credits) m.052s_8)",
+        "s_expression_processed": "(JOIN (R film.film_story_contributor.film_story_credits) m.052s_8)"
+    },
+    {
+        "qid": "WebQTest-1271",
+        "question": "when did carolina panthers go to superbowl? The linked entity is Carolina Panthers (m.01y3c).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Carolina Panthers",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n  ns:m.06x5s ns:time.recurring_event.instances ?x . # Super Bowl instances\n\n  {\n    ?x ns:sports.sports_championship_event.champion ns:m.01y3c . # (Carolina Panthers) \n  }\n  UNION\n  {\n    ?x ns:sports.sports_championship_event.runner_up ns:m.01y3c . # (Carolina Panthers) \n  }\n}",
+        "topic_entity": "m.01y3c",
+        "answer": [
+            {
+                "answer_argument": "m.0277y8",
+                "answer_type": "Entity",
+                "entity_name": "Super Bowl XXXVIII"
+            }
+        ],
+        "s_expression": "(AND (JOIN sports.sports_championship_event.runner_up m.01y3c) (JOIN (R time.recurring_event.instances) m.06x5s))",
+        "s_expression_processed": "(AND (JOIN sports.sports_championship_event.runner_up m.01y3c) (JOIN (R time.recurring_event.instances) m.06x5s))"
+    },
+    {
+        "qid": "WebQTest-1272",
+        "question": "when did the burma cyclone happen? The linked entity is burma cyclone (m.041l08b).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.041l08b",
+                    "class": "common.topic",
+                    "friendly_name": "burma cyclone",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "meteorology.tropical_cyclone.formed"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.041l08b)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.041l08b ns:meteorology.tropical_cyclone.formed ?x .\n}\n",
+        "topic_entity": "m.041l08b",
+        "answer": [
+            {
+                "answer_argument": "2008-04-27",
+                "answer_type": "Value",
+                "entity_name": null
+            }
+        ],
+        "s_expression": "(JOIN (R meteorology.tropical_cyclone.formed) m.041l08b)",
+        "s_expression_processed": "(JOIN (R meteorology.tropical_cyclone.formed) m.041l08b)"
+    },
+    {
+        "qid": "WebQTest-1280",
+        "question": "who was president after franklin d. roosevelt? The linked entity is Franklin D. Roosevelt (m.02yy8).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Franklin D. Roosevelt",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT  ?x\nWHERE {\n  ns:m.060d2 ns:government.government_office_or_title.office_holders ?y1 .  # President of the United States\n  ?y1 ns:government.government_position_held.office_holder ns:m.02yy8 ; # Franklin D. Roosevelt\n      ns:government.government_position_held.to ?to .\n\n  ns:m.060d2 ns:government.government_office_or_title.office_holders ?y2 .  # President of the United States\n  ?y2 ns:government.government_position_held.office_holder ?x ;\n      ns:government.government_position_held.to ?from .\n  \n  FILTER(xsd:dateTime(?from) - xsd:dateTime(?to) > 0)\n}\nORDER BY xsd:dateTime(?from)\nLIMIT 1",
+        "topic_entity": "m.02yy8",
+        "answer": [
+            {
+                "answer_argument": "m.09bg4l",
+                "answer_type": "Entity",
+                "entity_name": "Harry S. Truman"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-1417",
+        "question": "when was the last time the boston bruins went to the stanley cup? The linked entity is Boston Bruins (m.0j2zj).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Boston Bruins",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n  ns:m.0cc8tt9 ns:time.recurring_event.instances ?x . # Stanly Cup finals instances\n\n  {\n    ?x ns:sports.sports_championship_event.champion ns:m.0j2zj . #(Boston Bruins)\n  }\n  UNION\n  {\n    ?x ns:sports.sports_championship_event.runner_up ns:m.0j2zj . #(Boston Bruins)\n  }\n\n  ?x ns:time.event.start_date ?st .\n}\nORDER BY DESC(xsd:datetime(?st))\nLIMIT 1",
+        "topic_entity": "m.0j2zj",
+        "answer": [
+            {
+                "answer_argument": "m.0hrcjzl",
+                "answer_type": "Entity",
+                "entity_name": "2013 Stanley Cup Finals"
+            }
+        ],
+        "s_expression": "(ARGMAX (JOIN (R sports.sports_team.championships) m.0j2zj) time.event.start_date)",
+        "s_expression_processed": "(ARGMAX (JOIN (R sports.sports_team.championships) m.0j2zj) time.event.start_date)"
+    },
+    {
+        "qid": "WebQTest-1418",
+        "question": "who is meredith gray married to in real life? The linked entity is meredith gray (m.0268x2f).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Meredith Grey",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n                ns:m.0268x2f ns:tv.tv_character.appeared_in_tv_program ?y .\n                ?y ns:tv.regular_tv_appearance.actor ?z .\n                ?z ns:people.person.spouse_s ?s .\n                ?s ns:people.marriage.spouse ?x .\n                ?s ns:people.marriage.type_of_union ns:m.04ztj .\nFilter (?x != ?z)\nFILTER(NOT EXISTS {?s ns:people.marriage.from ?sk0} || \n           EXISTS {?s ns:people.marriage.from ?sk1 . \n                   FILTER(xsd:datetime(?sk1) <= \"2015-08-10\"^^xsd:dateTime) })\nFILTER(NOT EXISTS {?s ns:people.marriage.to ?sk2} || \n           EXISTS {?s ns:people.marriage.to ?sk3 . \n                   FILTER(xsd:datetime(?sk3) >= \"2015-08-10\"^^xsd:dateTime) })\n?s ns:people.marriage.from ?sk4 .\n}\nORDER BY DESC(xsd:datetime(?sk4))\nLIMIT 1",
+        "topic_entity": "m.0268x2f",
+        "answer": [
+            {
+                "answer_argument": "m.09k5l7w",
+                "answer_type": "Entity",
+                "entity_name": "Chris Ivery"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-1434",
+        "question": "who is in the american league in baseball? The linked entity is american league (m.0h8b0).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.0h8b0",
+                    "class": "common.topic",
+                    "friendly_name": "american league",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "baseball.baseball_league.teams"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.0h8b0)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.0h8b0 ns:baseball.baseball_league.teams ?x .\n}\n",
+        "topic_entity": "m.0h8b0",
+        "answer": [
+            {
+                "answer_argument": "m.01d5z",
+                "answer_type": "Entity",
+                "entity_name": "Boston Red Sox"
+            },
+            {
+                "answer_argument": "m.01d6g",
+                "answer_type": "Entity",
+                "entity_name": "Baltimore Orioles"
+            },
+            {
+                "answer_argument": "m.01slc",
+                "answer_type": "Entity",
+                "entity_name": "Chicago White Sox"
+            },
+            {
+                "answer_argument": "m.01yhm",
+                "answer_type": "Entity",
+                "entity_name": "Cleveland Indians"
+            },
+            {
+                "answer_argument": "m.02d02",
+                "answer_type": "Entity",
+                "entity_name": "Detroit Tigers"
+            },
+            {
+                "answer_argument": "m.03m1n",
+                "answer_type": "Entity",
+                "entity_name": "Houston Astros"
+            },
+            {
+                "answer_argument": "m.049n7",
+                "answer_type": "Entity",
+                "entity_name": "Kansas City Royals"
+            },
+            {
+                "answer_argument": "m.04wmvz",
+                "answer_type": "Entity",
+                "entity_name": "Los Angeles Angels of Anaheim"
+            },
+            {
+                "answer_argument": "m.0512p",
+                "answer_type": "Entity",
+                "entity_name": "Minnesota Twins"
+            },
+            {
+                "answer_argument": "m.05lkwhs",
+                "answer_type": "Entity",
+                "entity_name": "Washington Senators"
+            },
+            {
+                "answer_argument": "m.05ll0s1",
+                "answer_type": "Entity",
+                "entity_name": "Washington Senators"
+            },
+            {
+                "answer_argument": "m.05m_8",
+                "answer_type": "Entity",
+                "entity_name": "Oakland Athletics"
+            },
+            {
+                "answer_argument": "m.05nlyxv",
+                "answer_type": "Entity",
+                "entity_name": "Philadelphia Athletics"
+            },
+            {
+                "answer_argument": "m.062s316",
+                "answer_type": "Entity",
+                "entity_name": "Tampa Bay Devil Rays"
+            },
+            {
+                "answer_argument": "m.06wpc",
+                "answer_type": "Entity",
+                "entity_name": "Seattle Mariners"
+            },
+            {
+                "answer_argument": "m.07l4z",
+                "answer_type": "Entity",
+                "entity_name": "Toronto Blue Jays"
+            },
+            {
+                "answer_argument": "m.07l8f",
+                "answer_type": "Entity",
+                "entity_name": "Tampa Bay Rays"
+            },
+            {
+                "answer_argument": "m.07l8x",
+                "answer_type": "Entity",
+                "entity_name": "Texas Rangers"
+            },
+            {
+                "answer_argument": "m.0cqt41",
+                "answer_type": "Entity",
+                "entity_name": "New York Yankees"
+            },
+            {
+                "answer_argument": "m.0fq2vj2",
+                "answer_type": "Entity",
+                "entity_name": "Seattle Pilots"
+            }
+        ],
+        "s_expression": "(JOIN (R baseball.baseball_league.teams) m.0h8b0)",
+        "s_expression_processed": "(JOIN (R baseball.baseball_league.teams) m.0h8b0)"
+    },
+    {
+        "qid": "WebQTest-1544",
+        "question": "who was president after william henry harrison? The linked entity is President of the United States (m.060d2).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "President of the United States",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x \nWHERE {\nfilter (?x != ns:m.0835q)\n  ns:m.0835q ns:government.us_president.presidency_number ?p .\n  ns:m.060d2 ns:government.government_office_or_title.office_holders ?y .\n  ?y ns:government.government_position_held.office_holder ?x .\n  ?x ns:government.us_president.presidency_number ?pp .\nfilter (xsd:float(?p)+1 = xsd:float(?pp))\n}",
+        "topic_entity": "m.060d2",
+        "answer": [
+            {
+                "answer_argument": "m.042dk",
+                "answer_type": "Entity",
+                "entity_name": "John Tyler"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-1551",
+        "question": "what year did seattle seahawks go to the super bowl? The linked entity is Seattle Seahawks (m.070xg).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Seattle Seahawks",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT  ?x\nWHERE {\n  ns:m.06x5s ns:sports.sports_championship.events ?x . # Super Bowl\n  {\n    { ?x ns:sports.sports_championship_event.runner_up ns:m.070xg . } # Seattle Seahawks\n    UNION\n    { ?x ns:sports.sports_championship_event.champion ns:m.070xg . } # Seattle Seahawks\n  }\n  ?x ns:time.event.start_date ?d .\n}",
+        "topic_entity": "m.070xg",
+        "answer": [
+            {
+                "answer_argument": "m.032tn6",
+                "answer_type": "Entity",
+                "entity_name": "Super Bowl XL"
+            },
+            {
+                "answer_argument": "m.09k4qg3",
+                "answer_type": "Entity",
+                "entity_name": "Super Bowl XLVIII"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-1592",
+        "question": "what are all the songs justin bieber wrote? The linked entity is Justin Bieber (m.06w2sn5).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Justin Bieber",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n\t{ \n\t  # Lyrics\n\t  ns:m.06w2sn5 ns:music.lyricist.lyrics_written ?x .\n\t}\n\tUNION\n\t{\n\t  # Compositions\n\t  ns:m.06w2sn5 ns:music.composer.compositions ?x .\n\t}\n}",
+        "topic_entity": "m.06w2sn5",
+        "answer": [
+            {
+                "answer_argument": "m.0116pj4q",
+                "answer_type": "Entity",
+                "entity_name": "Lolly"
+            },
+            {
+                "answer_argument": "m.012k_48s",
+                "answer_type": "Entity",
+                "entity_name": "Home to Mama"
+            },
+            {
+                "answer_argument": "m.09v3gb4",
+                "answer_type": "Entity",
+                "entity_name": "Baby"
+            },
+            {
+                "answer_argument": "m.0bbvzq2",
+                "answer_type": "Entity",
+                "entity_name": "Never Let You Go"
+            },
+            {
+                "answer_argument": "m.0bbz4p9",
+                "answer_type": "Entity",
+                "entity_name": "Eenie Meenie"
+            },
+            {
+                "answer_argument": "m.0bmc2ql",
+                "answer_type": "Entity",
+                "entity_name": "Somebody to Love"
+            },
+            {
+                "answer_argument": "m.0c3vvnk",
+                "answer_type": "Entity",
+                "entity_name": "Never Say Never"
+            },
+            {
+                "answer_argument": "m.0fqlv5l",
+                "answer_type": "Entity",
+                "entity_name": "Bigger"
+            },
+            {
+                "answer_argument": "m.0g5b0p2",
+                "answer_type": "Entity",
+                "entity_name": "Pray"
+            },
+            {
+                "answer_argument": "m.0g5q9ky",
+                "answer_type": "Entity",
+                "entity_name": "First Dance"
+            },
+            {
+                "answer_argument": "m.0j4453t",
+                "answer_type": "Entity",
+                "entity_name": "Live My Life"
+            },
+            {
+                "answer_argument": "m.0j64n8c",
+                "answer_type": "Entity",
+                "entity_name": "Boyfriend"
+            },
+            {
+                "answer_argument": "m.0jwqwyx",
+                "answer_type": "Entity",
+                "entity_name": "Turn to You (Mother's Day Dedication)"
+            },
+            {
+                "answer_argument": "m.0jwx2_w",
+                "answer_type": "Entity",
+                "entity_name": "Die in Your Arms"
+            },
+            {
+                "answer_argument": "m.0jxk_hq",
+                "answer_type": "Entity",
+                "entity_name": "Thought Of You"
+            },
+            {
+                "answer_argument": "m.0jxk_kq",
+                "answer_type": "Entity",
+                "entity_name": "Beauty And A Beat"
+            },
+            {
+                "answer_argument": "m.0jxkzb9",
+                "answer_type": "Entity",
+                "entity_name": "All Around The World"
+            },
+            {
+                "answer_argument": "m.0k0l2vf",
+                "answer_type": "Entity",
+                "entity_name": "As Long as You Love Me"
+            },
+            {
+                "answer_argument": "m.0ljtwfj",
+                "answer_type": "Entity",
+                "entity_name": "Beautiful"
+            },
+            {
+                "answer_argument": "m.0qfpkqq",
+                "answer_type": "Entity",
+                "entity_name": "Right Here"
+            },
+            {
+                "answer_argument": "m.0rytzvz",
+                "answer_type": "Entity",
+                "entity_name": "#thatPower"
+            },
+            {
+                "answer_argument": "m.0y6b7k5",
+                "answer_type": "Entity",
+                "entity_name": "Heartbreaker"
+            },
+            {
+                "answer_argument": "m.0ynrkyl",
+                "answer_type": "Entity",
+                "entity_name": "All That Matters"
+            },
+            {
+                "answer_argument": "m.0yt1lb9",
+                "answer_type": "Entity",
+                "entity_name": "Hold Tight"
+            },
+            {
+                "answer_argument": "m.0yt3yyw",
+                "answer_type": "Entity",
+                "entity_name": "Wait for a Minute"
+            },
+            {
+                "answer_argument": "m.0yt3zg2",
+                "answer_type": "Entity",
+                "entity_name": "Recovery"
+            },
+            {
+                "answer_argument": "m.0z6sgcx",
+                "answer_type": "Entity",
+                "entity_name": "Bad Day"
+            },
+            {
+                "answer_argument": "m.0zbv_v0",
+                "answer_type": "Entity",
+                "entity_name": "All Bad"
+            },
+            {
+                "answer_argument": "m.0zdkrym",
+                "answer_type": "Entity",
+                "entity_name": "PYD"
+            },
+            {
+                "answer_argument": "m.0zg6nnd",
+                "answer_type": "Entity",
+                "entity_name": "Change Me"
+            },
+            {
+                "answer_argument": "m.0zgb5ny",
+                "answer_type": "Entity",
+                "entity_name": "Roller Coaster"
+            },
+            {
+                "answer_argument": "m.0zmzvrc",
+                "answer_type": "Entity",
+                "entity_name": "Confident"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-1626",
+        "question": "who wrote st trinians? The linked entity is st trinians (m.01nxmb).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.01nxmb",
+                    "class": "common.topic",
+                    "friendly_name": "st trinians",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "fictional_universe.fictional_universe.created_by"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.01nxmb)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.01nxmb ns:fictional_universe.fictional_universe.created_by ?x .\n}\n",
+        "topic_entity": "m.01nxmb",
+        "answer": [
+            {
+                "answer_argument": "m.01v2jh",
+                "answer_type": "Entity",
+                "entity_name": "Ronald Searle"
+            }
+        ],
+        "s_expression": "(JOIN (R fictional_universe.fictional_universe.created_by) m.01nxmb)",
+        "s_expression_processed": "(JOIN (R fictional_universe.fictional_universe.created_by) m.01nxmb)"
+    },
+    {
+        "qid": "WebQTest-1698",
+        "question": "where do burmese cats originate from? The linked entity is burmese cats (m.01mvkt).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.01mvkt",
+                    "class": "common.topic",
+                    "friendly_name": "burmese cats",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "biology.animal_breed.place_of_origin"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.01mvkt)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.01mvkt ns:biology.animal_breed.place_of_origin ?x .\n}\n",
+        "topic_entity": "m.01mvkt",
+        "answer": [
+            {
+                "answer_argument": "m.04xn_",
+                "answer_type": "Entity",
+                "entity_name": "Myanmar"
+            },
+            {
+                "answer_argument": "m.07f1x",
+                "answer_type": "Entity",
+                "entity_name": "Thailand"
+            }
+        ],
+        "s_expression": "(JOIN (R biology.animal_breed.place_of_origin) m.01mvkt)",
+        "s_expression_processed": "(JOIN (R biology.animal_breed.place_of_origin) m.01mvkt)"
+    },
+    {
+        "qid": "WebQTest-1761",
+        "question": "who ruled after king henry viii died? The linked entity is Henry VIII of England (m.03p77).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Henry VIII of England",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n  ns:m.04l4rht ns:royalty.noble_title.holders ?y0 .  # Monarch of England\n  ?y0 ns:royalty.noble_title_tenure.noble_title ?title ;\n      ns:royalty.noble_title_tenure.noble_person ns:m.03p77 ;\n      ns:royalty.noble_title_tenure.to_date ?to .\n\n  ns:m.04l4rht ns:royalty.noble_title.holders ?y1 .  # Monarch of England\n  ?y1 ns:royalty.noble_title_tenure.noble_person ?x ;\n      ns:royalty.noble_title_tenure.from_date ?from .\n\n  FILTER (xsd:datetime(?from) - xsd:datetime(?to) >= 0)\n}\nORDER BY xsd:datetime(?from)\nLIMIT 1",
+        "topic_entity": "m.03p77",
+        "answer": [
+            {
+                "answer_argument": "m.02s82",
+                "answer_type": "Entity",
+                "entity_name": "Edward VI of England"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-1789",
+        "question": "what is john edwards indicted for? The linked entity is john edwards (m.01651q).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 2,
+                    "node_type": "entity",
+                    "id": "m.01651q",
+                    "class": "common.topic",
+                    "friendly_name": "john edwards",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                },
+                {
+                    "nid": 1,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "Common topic",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none"
+                }
+            ],
+            "edges": [
+                {
+                    "start": 2,
+                    "end": 1,
+                    "relation": "base.crime.acquitted_person.acquittal"
+                },
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "base.crime.acquittal.crime_type"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 3,
+        "num_edge": 2,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.01651q)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.01651q ns:base.crime.acquitted_person.acquittal ?y .\n?y ns:base.crime.acquittal.crime_type ?x .\n}\n",
+        "topic_entity": "m.01651q",
+        "answer": [
+            {
+                "answer_argument": "m.0hj49",
+                "answer_type": "Entity",
+                "entity_name": "Political corruption"
+            }
+        ],
+        "s_expression": "(JOIN (R base.crime.acquittal.crime_type) (JOIN (R base.crime.acquitted_person.acquittal) m.01651q))",
+        "s_expression_processed": "(JOIN (R base.crime.acquittal.crime_type) (JOIN (R base.crime.acquitted_person.acquittal) m.01651q))"
+    },
+    {
+        "qid": "WebQTest-1791",
+        "question": "when was the printing press invented by gutenberg? The linked entity is printing press (m.05sxt).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.05sxt",
+                    "class": "common.topic",
+                    "friendly_name": "printing press",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "law.invention.date_of_invention"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.05sxt)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.05sxt ns:law.invention.date_of_invention ?x .\n}\n",
+        "topic_entity": "m.05sxt",
+        "answer": [
+            {
+                "answer_argument": "1440",
+                "answer_type": "Value",
+                "entity_name": null
+            }
+        ],
+        "s_expression": "(JOIN (R law.invention.date_of_invention) m.05sxt)",
+        "s_expression_processed": "(JOIN (R law.invention.date_of_invention) m.05sxt)"
+    },
+    {
+        "qid": "WebQTest-1822",
+        "question": "who is in paul ryan 's family? The linked entity is Paul Ryan (m.024v2j).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Paul Ryan",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n\tFILTER (?x != ns:m.024v2j)\n\t{ \n\t  # Parents\n\t  ns:m.024v2j ns:people.person.parents ?x .\n\t}\n\tUNION\n\t{\n\t  # Children\n\t  ns:m.024v2j ns:people.person.children ?x .\n\t}\n\tUNION\n\t{\n\t  # Siblings\n\t  ns:m.024v2j ns:people.person.sibling_s ?y .\n\t  ?y ns:people.sibling_relationship.sibling ?x .\n\t}\n\tUNION\n\t{\n\t  # Spouse\n\t  ns:m.024v2j ns:people.person.spouse_s ?y .\n\t  ?y ns:people.marriage.spouse ?x .\n\t  ?y ns:people.marriage.type_of_union ns:m.04ztj .\n\t  FILTER (NOT EXISTS {?y ns:people.marriage.to []})\n\t}\n}",
+        "topic_entity": "m.024v2j",
+        "answer": [
+            {
+                "answer_argument": "m.0j6fhh8",
+                "answer_type": "Entity",
+                "entity_name": "Janna Ryan"
+            },
+            {
+                "answer_argument": "m.0kr8sx8",
+                "answer_type": "Entity",
+                "entity_name": "Elizabeth Ryan"
+            },
+            {
+                "answer_argument": "m.0kr8t50",
+                "answer_type": "Entity",
+                "entity_name": "Charles Ryan"
+            },
+            {
+                "answer_argument": "m.0kr8tj2",
+                "answer_type": "Entity",
+                "entity_name": "Samuel Ryan"
+            },
+            {
+                "answer_argument": "m.0qf0gtr",
+                "answer_type": "Entity",
+                "entity_name": "Paul Murray Ryan"
+            },
+            {
+                "answer_argument": "m.0qf0hct",
+                "answer_type": "Entity",
+                "entity_name": "Elizabeth A. Ryan"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-1874",
+        "question": "who does portugal trade with? The linked entity is Portugal (m.05r4w).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Portugal",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x \nWHERE {\n\tFILTER (?x != ns:m.05r4w)\n\t{ \n\t  ns:m.05r4w ns:location.statistical_region.places_exported_to ?y .\n\t  ?y ns:location.imports_and_exports.exported_to ?x . \n\t}\n\tUNION\n\t{\n\t  ns:m.05r4w ns:location.statistical_region.places_imported_from ?y .\n\t  ?y ns:location.imports_and_exports.imported_from ?x . \n\t}\n}",
+        "topic_entity": "m.05r4w",
+        "answer": [
+            {
+                "answer_argument": "m.01z215",
+                "answer_type": "Entity",
+                "entity_name": "Saudi Arabia"
+            },
+            {
+                "answer_argument": "m.02k54",
+                "answer_type": "Entity",
+                "entity_name": "Egypt"
+            },
+            {
+                "answer_argument": "m.03__y",
+                "answer_type": "Entity",
+                "entity_name": "Jordan"
+            },
+            {
+                "answer_argument": "m.04gqr",
+                "answer_type": "Entity",
+                "entity_name": "Libya"
+            },
+            {
+                "answer_argument": "m.04wgh",
+                "answer_type": "Entity",
+                "entity_name": "Morocco"
+            },
+            {
+                "answer_argument": "m.04wlh",
+                "answer_type": "Entity",
+                "entity_name": "Mozambique"
+            },
+            {
+                "answer_argument": "m.06t2t",
+                "answer_type": "Entity",
+                "entity_name": "Singapore"
+            },
+            {
+                "answer_argument": "m.07fj_",
+                "answer_type": "Entity",
+                "entity_name": "Tunisia"
+            },
+            {
+                "answer_argument": "m.0b90_r",
+                "answer_type": "Entity",
+                "entity_name": "Mexico"
+            },
+            {
+                "answer_argument": "m.0h3y",
+                "answer_type": "Entity",
+                "entity_name": "Algeria"
+            },
+            {
+                "answer_argument": "m.0j1z8",
+                "answer_type": "Entity",
+                "entity_name": "United Arab Emirates"
+            },
+            {
+                "answer_argument": "m.0j4b",
+                "answer_type": "Entity",
+                "entity_name": "Angola"
+            }
+        ],
+        "s_expression": "(JOIN (R location.imports_and_exports.exported_to) (JOIN (R location.statistical_region.places_exported_to) m.05r4w))",
+        "s_expression_processed": "(JOIN (R location.imports_and_exports.exported_to) (JOIN (R location.statistical_region.places_exported_to) m.05r4w))"
+    },
+    {
+        "qid": "WebQTest-1882",
+        "question": "what was franklin d roosevelt 's job before president? The linked entity is Franklin D. Roosevelt (m.02yy8).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Franklin D. Roosevelt",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n  {\n    SELECT ?pFrom \n    WHERE {\n      ns:m.02yy8 ns:government.politician.government_positions_held ?y . # Franklin D. Roosevelt\n      ?y ns:government.government_position_held.office_position_or_title ?x ; \n         ns:government.government_position_held.basic_title ns:m.060c4 ; # President\n         ns:government.government_position_held.from ?pFrom .\n    }\n  }\n  ns:m.02yy8 ns:government.politician.government_positions_held ?y . # Franklin D. Roosevelt\n  ?y ns:government.government_position_held.office_position_or_title ?x ; \n     ns:government.government_position_held.from ?from .\n  \n  FILTER(xsd:dateTime(?pFrom) - xsd:dateTime(?from) > 0)\n}",
+        "topic_entity": "m.02yy8",
+        "answer": [
+            {
+                "answer_argument": "m.02_w_r9",
+                "answer_type": "Entity",
+                "entity_name": "Governor of New York"
+            },
+            {
+                "answer_argument": "m.03whjr",
+                "answer_type": "Entity",
+                "entity_name": "Assistant Secretary of the Navy"
+            },
+            {
+                "answer_argument": "m.04kz0b7",
+                "answer_type": "Entity",
+                "entity_name": "New York State Senator"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-1888",
+        "question": "what year did the milwaukee brewers go to the world series? The linked entity is World Series (m.0fjp3).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "World Series",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n  ?x ns:sports.sports_championship_event.championship ns:m.0fjp3 . # World Series\n  {\n    ?x ns:sports.sports_championship_event.runner_up ns:m.051vz . # Milwaukee Brewers\n  }\n  UNION\n  {\n    ?x ns:sports.sports_championship_event.runner_up ns:m.051vz . # Milwaukee Brewers\n  }\n}",
+        "topic_entity": "m.0fjp3",
+        "answer": [
+            {
+                "answer_argument": "m.04j78h",
+                "answer_type": "Entity",
+                "entity_name": "1982 World Series"
+            }
+        ],
+        "s_expression": "(AND (JOIN sports.sports_championship_event.championship m.0fjp3) (JOIN sports.sports_championship_event.runner_up m.051vz))",
+        "s_expression_processed": "(AND (JOIN sports.sports_championship_event.championship m.0fjp3) (JOIN sports.sports_championship_event.runner_up m.051vz))"
+    },
+    {
+        "qid": "WebQTest-1900",
+        "question": "who played darth vader in the first movie? The linked entity is darth vader (m.0f2y0).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Darth Vader",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n{\n  SELECT DISTINCT ?f1\n  WHERE {\n    ns:m.0f2y0 ns:film.film_character.portrayed_in_films ?y .  # Darth Vader\n    ?y ns:film.performance.film ?f1 .\n    ?f1 ns:film.film.initial_release_date ?d .\n  }\n  ORDER BY ?d\n  LIMIT 1\n}\n  ns:m.0f2y0 ns:film.film_character.portrayed_in_films ?y .  # Darth Vader\n  ?y ns:film.performance.actor ?x ; \n     ns:film.performance.film ?f .\n  FILTER (?f1 = ?f)\n}",
+        "topic_entity": "m.0f2y0",
+        "answer": [
+            {
+                "answer_argument": "m.03xblf",
+                "answer_type": "Entity",
+                "entity_name": "David Prowse"
+            },
+            {
+                "answer_argument": "m.0f6_x",
+                "answer_type": "Entity",
+                "entity_name": "James Earl Jones"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-1942",
+        "question": "who was in the israeli palestinian conflict? The linked entity is israeli palestinian conflict (m.0cj5y).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "entity",
+                    "id": "m.0cj5y",
+                    "class": "common.topic",
+                    "friendly_name": "israeli palestinian conflict",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "time.event.people_involved"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 2,
+        "num_edge": 1,
+        "sparql_query": "PREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nFILTER (?x != ns:m.0cj5y)\nFILTER (!isLiteral(?x) OR lang(?x) = '' OR langMatches(lang(?x), 'en'))\nns:m.0cj5y ns:time.event.people_involved ?x .\n}\n",
+        "topic_entity": "m.0cj5y",
+        "answer": [
+            {
+                "answer_argument": "m.012bk",
+                "answer_type": "Entity",
+                "entity_name": "Ariel Sharon"
+            },
+            {
+                "answer_argument": "m.019x_p",
+                "answer_type": "Entity",
+                "entity_name": "Chaim Weizmann"
+            },
+            {
+                "answer_argument": "m.01cw71",
+                "answer_type": "Entity",
+                "entity_name": "Ahmad Shukeiri"
+            },
+            {
+                "answer_argument": "m.01czvz",
+                "answer_type": "Entity",
+                "entity_name": "Haj Amin al-Husseini"
+            },
+            {
+                "answer_argument": "m.01html",
+                "answer_type": "Entity",
+                "entity_name": "Mahmoud Abbas"
+            },
+            {
+                "answer_argument": "m.01tp58",
+                "answer_type": "Entity",
+                "entity_name": "Ahmed Qurei"
+            },
+            {
+                "answer_argument": "m.0203v",
+                "answer_type": "Entity",
+                "entity_name": "Colin Powell"
+            },
+            {
+                "answer_argument": "m.036df9",
+                "answer_type": "Entity",
+                "entity_name": "Hanan Ashrawi"
+            },
+            {
+                "answer_argument": "m.039b_q",
+                "answer_type": "Entity",
+                "entity_name": "Dalal Mughrabi"
+            },
+            {
+                "answer_argument": "m.056xs",
+                "answer_type": "Entity",
+                "entity_name": "Menachem Begin"
+            },
+            {
+                "answer_argument": "m.08849",
+                "answer_type": "Entity",
+                "entity_name": "Yasser Arafat"
+            },
+            {
+                "answer_argument": "m.0b_zw",
+                "answer_type": "Entity",
+                "entity_name": "Yitzhak Rabin"
+            },
+            {
+                "answer_argument": "m.0c_8s",
+                "answer_type": "Entity",
+                "entity_name": "Shimon Peres"
+            },
+            {
+                "answer_argument": "m.0cj84",
+                "answer_type": "Entity",
+                "entity_name": "Anthony Zinni"
+            },
+            {
+                "answer_argument": "m.0d58h",
+                "answer_type": "Entity",
+                "entity_name": "Anwar Sadat"
+            },
+            {
+                "answer_argument": "m.0hspy",
+                "answer_type": "Entity",
+                "entity_name": "David Ben-Gurion"
+            },
+            {
+                "answer_argument": "m.0jfzc",
+                "answer_type": "Entity",
+                "entity_name": "Marwan Barghouti"
+            },
+            {
+                "answer_argument": "m.0kvhz",
+                "answer_type": "Entity",
+                "entity_name": "Hussein of Jordan"
+            },
+            {
+                "answer_argument": "m.0kwtd",
+                "answer_type": "Entity",
+                "entity_name": "Nabil Shaath"
+            },
+            {
+                "answer_argument": "m.0kww1",
+                "answer_type": "Entity",
+                "entity_name": "Ahmed Yassin"
+            },
+            {
+                "answer_argument": "m.0lf35",
+                "answer_type": "Entity",
+                "entity_name": "Abdullah of Saudi Arabia"
+            }
+        ],
+        "s_expression": "(JOIN (R time.event.people_involved) m.0cj5y)",
+        "s_expression_processed": "(JOIN (R time.event.people_involved) m.0cj5y)"
+    },
+    {
+        "qid": "WebQTest-1965",
+        "question": "who did the voice for lola bunny? The linked entity is Lola Bunny (m.0534r8).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "Lola Bunny",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n\t{ \n\t  # Film\n\t  ns:m.0534r8 ns:film.film_character.portrayed_in_films ?y .\n\t  ?y ns:film.performance.actor ?x .\n\t  ?y ns:film.performance.special_performance_type ns:m.02nsjvf . #voice\n\t}\n\tUNION\n\t{\n\t  # TV\n\t  ns:m.0534r8 ns:tv.tv_character.appeared_in_tv_program ?y .\n\t  ?y ns:tv.regular_tv_appearance.actor ?x .\n\t}\n}",
+        "topic_entity": "m.0534r8",
+        "answer": [
+            {
+                "answer_argument": "m.024my5",
+                "answer_type": "Entity",
+                "entity_name": "Kath Soucie"
+            },
+            {
+                "answer_argument": "m.08vr94",
+                "answer_type": "Entity",
+                "entity_name": "Kristen Wiig"
+            },
+            {
+                "answer_argument": "m.0fm5ld",
+                "answer_type": "Entity",
+                "entity_name": "Britt McKillip"
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    },
+    {
+        "qid": "WebQTest-1987",
+        "question": "what materials did eduardo paolozzi use in his work? The linked entity is eduardo paolozzi (m.03fncl).",
+        "graph_query": {
+            "nodes": [
+                {
+                    "nid": 0,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 1,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 1,
+                    "node_type": "class",
+                    "id": "common.topic",
+                    "class": "common.topic",
+                    "friendly_name": "common.topic",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none"
+                },
+                {
+                    "nid": 2,
+                    "node_type": "entity",
+                    "id": "m.03fncl",
+                    "class": "common.topic",
+                    "friendly_name": "eduardo paolozzi",
+                    "question_node": 0,
+                    "function": "none",
+                    "time_constraint": "none",
+                    "implicit": 0
+                }
+            ],
+            "edges": [
+                {
+                    "start": 2,
+                    "end": 1,
+                    "relation": "visual_art.visual_artist.artworks"
+                },
+                {
+                    "start": 1,
+                    "end": 0,
+                    "relation": "visual_art.artwork.media"
+                }
+            ]
+        },
+        "function": "none",
+        "num_node": 3,
+        "num_edge": 2,
+        "topic_entity_name": "Eduardo Paolozzi",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\n\tns:m.03fncl ns:visual_art.visual_artist.artworks ?y .\n\t?y ns:visual_art.artwork.media ?x . \n}",
+        "topic_entity": "m.03fncl",
+        "answer": [
+            {
+                "answer_argument": "m.01brf",
+                "answer_type": "Entity",
+                "entity_name": "Bronze"
+            }
+        ],
+        "s_expression": "(JOIN (R visual_art.artwork.media) (JOIN (R visual_art.visual_artist.artworks) m.03fncl))",
+        "s_expression_processed": "(JOIN (R visual_art.artwork.media) (JOIN (R visual_art.visual_artist.artworks) m.03fncl))"
+    },
+    {
+        "qid": "WebQTest-2027",
+        "question": "what team did david beckham play for before la galaxy? The linked entity is David Beckham (m.02d9k).",
+        "graph_query": {
+            "nodes": [],
+            "edges": []
+        },
+        "function": null,
+        "num_node": 0,
+        "num_edge": 0,
+        "topic_entity_name": "David Beckham",
+        "sparql_query": "#MANUAL SPARQL\nPREFIX ns: <http://rdf.freebase.com/ns/>\nSELECT DISTINCT ?x\nWHERE {\nfilter(?x != ns:m.01634x)\nns:m.02d9k ns:sports.pro_athlete.teams ?z . #beckham\n?z ns:sports.sports_team_roster.team ns:m.01k2yr . #galaxy\n?z ns:sports.sports_team_roster.from ?from .\nns:m.02d9k ns:sports.pro_athlete.teams ?y .\n?y ns:sports.sports_team_roster.team ?x .\n?y  ns:sports.sports_team_roster.to ?to .\n}\nORDER BY ASC(xsd:datetime(?from))\nLIMIT 1",
+        "topic_entity": "m.02d9k",
+        "answer": [
+            {
+                "answer_argument": "m.050fh",
+                "answer_type": "Entity",
+                "entity_name": "Manchester United F.C."
+            }
+        ],
+        "s_expression": null,
+        "s_expression_processed": null
+    }
+]
