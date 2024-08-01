@@ -9,7 +9,8 @@ from tqdm import tqdm
 class Retriever:
     def __init__(self) -> None:
         self.current_dir = os.path.dirname(__file__)
-        self.bi_model = SentenceTransformer(os.path.join(self.current_dir, 'retriever'))
+        # self.bi_model = SentenceTransformer(os.path.join(self.current_dir, 'retriever'))
+        self.bi_model = SentenceTransformer('Haixx/relation_retriever')
         self.load_relation_embedding()
         self.load_class_embedding()
 
