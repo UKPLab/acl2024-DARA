@@ -7,7 +7,7 @@
     🤗 <a href="https://huggingface.co/UKPLab/dara-mistral-7b" target="_blank">Models</a> |  🤗 <a href="https://huggingface.co/datasets/UKPLab/dara" target="_blank">Dataset</a> | 📃 <a href="https://arxiv.org/abs/2406.07080" target="_blank">Paper</a>
 </p>
 
-This repository implements the DARA, a LLM-based agent for KGQA, as described in [DARA: Decomposition-Alignment-Reasoning Autonomous Language Agent for Question Answering over Knowledge Graphs](https://arxiv.org/abs/2406.07080) 
+This repository implements the DARA, a LLM-based agent for KGQA, as described in [DARA: Decomposition-Alignment-Reasoning Autonomous Language Agent for Question Answering over Knowledge Graphs](https://aclanthology.org/2024.findings-acl.203/) 
 
 > **Abstract** : Answering Questions over Knowledge Graphs (KGQA) is key to well-functioning autonomous language agents in various real-life applications. To improve the neural-symbolic reasoning capabilities of language agents powered by Large Language Models (LLMs) in KGQA, we propose the DecompositionAlignment-Reasoning Agent (DARA) framework. DARA effectively parses questions into formal queries through a dual mechanism: high-level iterative task decomposition and low-level task grounding. Importantly, DARA can be efficiently trained with a small number of high-quality reasoning trajectories. Our experimental results demonstrate that DARA fine-tuned on LLMs (e.g. Llama-2-7B, Mistral) outperforms both in-context learning-based agents with GPT-4 and alternative fine-tuned agents, across different benchmarks in zero-shot evaluation, making such models more accessible for real-life applications. We also show that DARA attains performance comparable to state-of-the-art enumerating-and-ranking-based methods for KGQA.
 
@@ -107,11 +107,21 @@ python evaluate.py \
 
 ## Cite
 ```
-@article{fang2024dara,
-  title={DARA: Decomposition-Alignment-Reasoning Autonomous Language Agent for Question Answering over Knowledge Graphs},
-  author={Fang, Haishuo and Zhu, Xiaodan and Gurevych, Iryna},
-  journal={arXiv preprint arXiv:2406.07080},
-  year={2024}
+@inproceedings{fang-etal-2024-dara,
+    title = "$\texttt{DARA}$: Decomposition-Alignment-Reasoning Autonomous Language Agent for Question Answering over Knowledge Graphs",
+    author = "Fang, Haishuo  and
+      Zhu, Xiaodan  and
+      Gurevych, Iryna",
+    editor = "Ku, Lun-Wei  and
+      Martins, Andre  and
+      Srikumar, Vivek",
+    booktitle = "Findings of the Association for Computational Linguistics ACL 2024",
+    month = aug,
+    year = "2024",
+    address = "Bangkok, Thailand and virtual meeting",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.findings-acl.203",
+    pages = "3406--3432"}
 }
 ```
 
